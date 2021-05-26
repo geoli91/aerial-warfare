@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace PlaneGame
 {
+
     class MyPlane
     {
         public Image myplane;//飞机图片

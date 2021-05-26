@@ -44,8 +44,9 @@ namespace PlaneGame
             Mykeyboard.KeyUp(e.KeyCode);
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }
