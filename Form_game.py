@@ -2,7 +2,7 @@
 Description: 继承游戏窗口UI类，并实现相关操作
 Author: DJ
 Date: 2021-05-26 13:39:58
-LastEditTime: 2021-05-27 16:39:52
+LastEditTime: 2021-05-27 18:27:59
 LastEditors: DJ
 '''
 import sys
@@ -120,16 +120,6 @@ class FormGame(QtWidgets.QDialog,Ui_FormGame):
 
     def keyPressEvent(self, a0: QtGui.QKeyEvent) -> None:
         if not self.bool_game_over:
-            # dict_key_func={
-            #     Qt.Key_A:self.plane_palyer.move_left, 
-            #     Qt.Key_D:self.plane_palyer.move_right,
-            #     Qt.Key_W:self.plane_palyer.move_up,
-            #     Qt.Key_S:self.plane_palyer.move_low,
-            #     Qt.Key_J:self.plane_palyer.shot,
-            #     }
-            # func_key=lambda key:dict_key_func.get(key,lambda :None)()
-            # func_key(a0.key())
-            # self.update()
             self.keyboard.key_down(a0.key())
             # 刷新显示
             self.update()
@@ -163,6 +153,7 @@ class FormGame(QtWidgets.QDialog,Ui_FormGame):
         self.gameControl.qtimer_crack_detect.stop()
         self.gameControl.qtimer_move_bg.stop()
         self.plane_palyer.qtimer_move.stop()
+        self.plane_palyer.qtimer_shot.stop()
 
     def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
         reply = QMessageBox.question(self, '结束游戏？', '确定要退出游戏，返回主界面吗?',QMessageBox.Yes | QMessageBox.No, QMessageBox.No)

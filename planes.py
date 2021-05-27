@@ -2,7 +2,7 @@
 Description: 飞机类，包括飞机的基类和继承基类的玩家飞机类和敌军飞机类
 Author: DJ
 Date: 2021-05-26 16:16:52
-LastEditTime: 2021-05-27 17:15:58
+LastEditTime: 2021-05-27 18:30:48
 LastEditors: DJ
 '''
 from bullets import Bullet
@@ -52,7 +52,8 @@ class BasePlane(QtCore.QObject):
     def HP(self,value):
         self.__HP=value
         # 判断飞机血量，如果为0，则触发爆炸
-        if self.HP==0:
+        if self.HP<=0:
+            self.__HP=0
             self.bomb()
 
     def bomb(self):
@@ -234,9 +235,27 @@ class PlanePlayer(BasePlane):
     @param {*} self
     '''    
     def bomb(self):
-        self.sigmal_game_over.emit()
+        # 创建定时器，爆炸时使用
+        self.qtimer_bomb_change=QtCore.QTimer()
+        self.qtimer_bomb_change.timeout.connect(self.bomb_change)
+        self.qtimer_bomb_change.start(200)
         return super().bomb()
 
+    '''
+    @description: 控制爆炸逐渐变化
+    @param  {*}
+    @return {*}
+    @param {*} self
+    '''    
+    def bomb_change(self):
+        path_img_bomb=self.list_bomb_img_path[self.int_bomb_change]
+        pixmap_bomb=QtGui.QPixmap(path_img_bomb)
+        self.pixmap=pixmap_bomb
+        self.int_bomb_change+=1
+        if self.int_bomb_change>=len(self.list_bomb_img_path):
+            self.qtimer_bomb_change.stop()
+            self.sigmal_game_over.emit()
+            
     def remove_self(self):
         return super().remove_self()
 

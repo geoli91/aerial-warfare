@@ -2,7 +2,7 @@
 Description: 游戏控制类，用于控制游戏的各种操作和状态
 Author: DJ
 Date: 2021-05-26 15:35:06
-LastEditTime: 2021-05-27 16:19:30
+LastEditTime: 2021-05-27 18:26:30
 LastEditors: DJ
 '''
 import random
@@ -122,13 +122,13 @@ class GameControl():
             overlap_percent=self.crack_detect_object(self.plane_player,enemy)
             if overlap_percent>self.crack_threshold:
                 enemy.HP-=1
-                self.plane_player.HP-=1
+                self.plane_player.HP-=10
                 self.int_score+=10
         """检测玩家飞机与敌方子弹的碰撞"""
         for bullet in [x for x in self.list_bullet if x.class_bullet=='enemy' ]:
             overlap_percent=self.crack_detect_object(self.plane_player,bullet)
             if overlap_percent>self.crack_threshold:
-                self.plane_player.HP-=1
+                self.plane_player.HP-=10
                 bullet.remove_bullet()
         """检测敌方飞机与玩家子弹的碰撞"""
         for enemy in self.list_enemy:

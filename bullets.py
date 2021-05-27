@@ -2,7 +2,7 @@
 Description: 
 Author: DJ
 Date: 2021-05-26 16:21:19
-LastEditTime: 2021-05-27 13:56:26
+LastEditTime: 2021-05-27 18:21:44
 LastEditors: DJ
 '''
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -68,5 +68,6 @@ class Bullet(QtCore.QObject):
             self.remove_bullet()
 
     def remove_bullet(self):
-        self.list_bullet.remove(self)
+        if self in self.list_bullet:
+            self.list_bullet.remove(self)
         del self
