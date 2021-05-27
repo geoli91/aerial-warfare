@@ -2,7 +2,7 @@
 Description: 飞机类，包括飞机的基类和继承基类的玩家飞机类和敌军飞机类
 Author: DJ
 Date: 2021-05-26 16:16:52
-LastEditTime: 2021-05-27 17:02:44
+LastEditTime: 2021-05-27 17:15:58
 LastEditors: DJ
 '''
 from bullets import Bullet
@@ -347,4 +347,4 @@ class PlaneEnemy(BasePlane):
         if self.int_bomb_change>=len(self.list_bomb_img_path):
             self.qtimer_bomb_change.stop()
             self.remove_self()
-            del self    
+            del self
