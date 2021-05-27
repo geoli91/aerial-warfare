@@ -2,7 +2,7 @@
 Description: 飞机类，包括飞机的基类和继承基类的玩家飞机类和敌军飞机类
 Author: DJ
 Date: 2021-05-26 16:16:52
-LastEditTime: 2021-05-27 16:03:14
+LastEditTime: 2021-05-27 16:02:56
 LastEditors: DJ
 '''
 from bullets import Bullet
@@ -216,7 +216,7 @@ class PlanePlayer(BasePlane):
         self.list_bullet.append(bullet)
 
     '''
-    @description: 查询当前按下的按钮，对应移动
+    @description: 
     @param  {*}
     @return {*}
     @param {*} self

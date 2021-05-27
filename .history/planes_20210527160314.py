@@ -216,7 +216,7 @@ class PlanePlayer(BasePlane):
         self.list_bullet.append(bullet)
 
     '''
-    @description: 查询当前按下的按钮，对应移动
+    @description: 查询当前按下的按钮， 
     @param  {*}
     @return {*}
     @param {*} self
