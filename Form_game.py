@@ -2,7 +2,7 @@
 Description: 继承游戏窗口UI类，并实现相关操作
 Author: DJ
 Date: 2021-05-26 13:39:58
-LastEditTime: 2021-05-27 18:27:59
+LastEditTime: 2021-05-28 14:44:25
 LastEditors: DJ
 '''
 import sys

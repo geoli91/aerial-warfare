@@ -1,3 +1,10 @@
+'''
+Description: 
+Author: DJ
+Date: 2021-05-26 12:38:57
+LastEditTime: 2021-05-28 17:04:43
+LastEditors: DJ
+'''
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'f:\DJ_programming\DJ_程序设计方法学作业\DJ_打飞机\resources\UI\start_window.ui'
@@ -36,7 +43,7 @@ class Ui_MainWindowPlane(object):
         self.gridLayout.addWidget(self.lineEdit_player_name, 1, 1, 1, 1)
         self.label_start_img = QtWidgets.QLabel(self.centralwidget)
         self.label_start_img.setText("")
-        self.label_start_img.setPixmap(QtGui.QPixmap("f:\\DJ_programming\\DJ_程序设计方法学作业\\DJ_打飞机\\resources\\UI\\../photo/background1.jpg"))
+        self.label_start_img.setPixmap(QtGui.QPixmap(r"resources\photo\background1.jpg"))
         self.label_start_img.setScaledContents(True)
         self.label_start_img.setObjectName("label_start_img")
         self.gridLayout.addWidget(self.label_start_img, 0, 0, 1, 2)
